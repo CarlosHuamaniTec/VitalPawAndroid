@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun FavoriteScreen() {
-    val favoriteItems = listOf("Minecraft", "Pokemon", "Nintendo", "PlayStation")
+    val favoriteItems = listOf("Max", "Bombom", "Fitulais", "Rex"," + Agregar nueva Mascota")
 
     Column(
         modifier = Modifier
@@ -21,7 +21,7 @@ fun FavoriteScreen() {
             .padding(16.dp)
     ) {
         Text(
-            text = "Favorite Items",
+            text = "Mascotas Seleccionadas",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )

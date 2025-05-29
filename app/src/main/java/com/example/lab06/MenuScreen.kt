@@ -7,9 +7,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen() {
+fun MenuScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -17,35 +18,39 @@ fun MenuScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Menu Screen",
+            text = "Menu",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
         MenuOption(
-            title = "Build",
+            title = "Actividades",
             onClick = { }
         )
 
         MenuOption(
-            title = "Favorite",
-            onClick = { }
+            title = "Signos",
+            onClick = {
+                navController.navigate("home")
+            }
         )
 
         MenuOption(
-            title = "Delete",
-            onClick = {  }
+            title = "Cambios",
+            onClick = { }
         )
 
         Spacer(modifier = Modifier.height(24.dp))
+
         Button(
             onClick = { },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Help/Settings")
+            Text(text = "Configuración")
         }
     }
 }
+
 
 @Composable
 fun MenuOption(title: String, onClick: () -> Unit) {

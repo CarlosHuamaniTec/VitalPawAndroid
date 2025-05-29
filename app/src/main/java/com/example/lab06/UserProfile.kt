@@ -6,7 +6,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -28,7 +30,7 @@ fun UserProfileScreen() {
             shape = MaterialTheme.shapes.large,
             color = MaterialTheme.colorScheme.surfaceVariant
         ) {
-            Image(painter = painterResource(id = R.drawable.profile_picture), contentDescription = null)
+            Image(painter = painterResource(id = R.drawable.perfil_user), contentDescription = null)
         }
 
         Text(
@@ -45,21 +47,14 @@ fun UserProfileScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Button(
-            onClick = {  },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Edit Profile")
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
+        // Botón negro: Edit Profile
         Button(
             onClick = { },
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
         ) {
-            Text(text = "Logout")
+            Text(text = "Edit Profile", fontWeight = FontWeight.Bold, color = Color.White)
         }
     }
 }
+

@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun DeleteScreen() {
-    val itemsToDelete = remember { mutableStateListOf("Cache", "Minecraft Movie", "Laboratorio 1", "Carros") }
+    val itemsToDelete = remember { mutableStateListOf("Nombre", "Raza", "Edad", "Datos") }
 
     Column(
         modifier = Modifier
@@ -23,7 +23,7 @@ fun DeleteScreen() {
             .padding(16.dp)
     ) {
         Text(
-            text = "Delete Items",
+            text = "Borrar Datos",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )

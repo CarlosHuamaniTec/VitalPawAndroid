@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun BuildScreen() {
-    val buildTasks = listOf("Tarea 1: Reiniciar aplicacion", "Tarea 2: Borrar Cache", "Tarea 3: Recuperar Cuenta", "Tarea 4: Eliminar Cuenta")
+    val buildTasks = listOf("Reiniciar aplicacion", "Idioma", "Predeterminada", "Configuracion Avanzada")
 
     Column(
         modifier = Modifier
@@ -19,7 +19,7 @@ fun BuildScreen() {
             .padding(16.dp)
     ) {
         Text(
-            text = "Build Tasks",
+            text = "Configuracion",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )
