@@ -312,24 +312,6 @@ fun CustomBottomBar(navController: NavHostController) {
         }
     }
 }
-@Composable
-fun Contador() {
-    var clickCount by remember { mutableStateOf(0) }
-    Scaffold(
-        topBar = { CustomTopBar(rememberNavController()) },
-        floatingActionButton = { CustomFAB { clickCount++ } },
-        content = { paddingValues ->
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(text = "Has apretado el botón $clickCount veces", fontSize = 24.sp)
-            }
-        }
-    )
-}
 
 @Composable
 fun CustomFAB(onFabClick: () -> Unit) {

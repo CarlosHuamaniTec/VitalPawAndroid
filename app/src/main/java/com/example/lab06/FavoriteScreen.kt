@@ -2,6 +2,7 @@ package com.example.lab06
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.*
@@ -10,10 +11,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.runtime.*
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.lab06.ui.theme.PetViewModel
 
 @Composable
-fun FavoriteScreen() {
-    val favoriteItems = listOf("Max", "Bombom", "Fitulais", "Rex"," + Agregar nueva Mascota")
+fun FavoriteScreen(petViewModel: PetViewModel = viewModel()) {
+    val favoriteItems by petViewModel.petList.collectAsState()
+    var showDialog by remember { mutableStateOf(false) }
+    var newPetName by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -25,14 +31,56 @@ fun FavoriteScreen() {
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )
+
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             contentPadding = PaddingValues(bottom = 16.dp)
         ) {
-            items(favoriteItems.size) { index ->
-                FavoriteItemCard(itemName = favoriteItems[index])
+            items(favoriteItems) { item ->
+                FavoriteItemCard(itemName = item)
             }
+
+            item {
+                OutlinedButton(
+                    onClick = { showDialog = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("+ Agregar nueva Mascota")
+                }
+            }
+        }
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = { Text("Agregar Mascota") },
+                text = {
+                    OutlinedTextField(
+                        value = newPetName,
+                        onValueChange = { newPetName = it },
+                        label = { Text("Nombre de la mascota") }
+                    )
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            if (newPetName.isNotBlank()) {
+                                petViewModel.addPet(newPetName)
+                                newPetName = ""
+                                showDialog = false
+                            }
+                        }
+                    ) {
+                        Text("Agregar")
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = { showDialog = false }) {
+                        Text("Cancelar")
+                    }
+                }
+            )
         }
     }
 }
