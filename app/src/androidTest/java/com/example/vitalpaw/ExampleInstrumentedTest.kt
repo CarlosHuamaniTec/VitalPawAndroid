@@ -1,4 +1,4 @@
-package com.example.lab06
+package com.example.vitalpaw
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.lab06
+package com.example.vitalpaw
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.*
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.lab06.ui.theme.PetViewModel
+import com.example.vitalpaw.ui.theme.PetViewModel
 
 @Composable
 fun FavoriteScreen(petViewModel: PetViewModel = viewModel()) {

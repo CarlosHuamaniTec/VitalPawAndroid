@@ -1,4 +1,4 @@
-package com.example.lab06
+package com.example.vitalpaw
 
 import org.junit.Test
 

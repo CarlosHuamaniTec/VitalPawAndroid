@@ -1,4 +1,4 @@
-package com.example.lab06.ui.theme
+package com.example.vitalpaw.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

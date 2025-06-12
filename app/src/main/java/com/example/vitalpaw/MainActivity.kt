@@ -1,4 +1,4 @@
-package com.example.lab06
+package com.example.vitalpaw
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -28,7 +28,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.lab06.ui.theme.Lab06Theme
+import com.example.vitalpaw.ui.theme.Lab06Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

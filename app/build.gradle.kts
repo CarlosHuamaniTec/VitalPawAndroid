@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lab06"
+    namespace = "com.example.vitalpaw"
     compileSdk = 34
 
     defaultConfig {
@@ -69,4 +69,19 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    // Gson
+    implementation (libs.gson)
+    // Coroutines
+    implementation (libs.kotlinx.coroutines.android)
+
+    testImplementation (libs.junit)
+    androidTestImplementation (libs.androidx.junit)
+    androidTestImplementation (libs.androidx.espresso.core)
+    androidTestImplementation (platform(libs.androidx.compose.bom.v20240903))
+    androidTestImplementation (libs.ui.test.junit4)
+    debugImplementation (libs.ui.tooling)
+    debugImplementation (libs.ui.test.manifest)
 }
